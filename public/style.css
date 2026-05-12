@@ -1,0 +1,227 @@
+/* ============================================
+   EUROPLASMET LANDING PAGE - ENHANCED CSS
+   ============================================ */
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(3deg);
+  }
+}
+
+@keyframes wobble {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-2deg);
+  }
+  75% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.mascot-character {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+  transition: transform 0.3s ease;
+}
+
+.mascot-character:hover {
+  transform: scale(1.1);
+}
+
+.mascot-message {
+  animation: bounceIn 0.3s ease-out;
+}
+
+.mascot-message .triangle-down {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid white;
+}
+
+#mobile-menu {
+  animation: slideInFromRight 0.3s ease-out;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 480px) {
+  .mascot-character {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  .mascot-message {
+    font-size: 11px;
+    padding: 6px 10px !important;
+    top: -24px !important;
+  }
+
+  .cta-button {
+    min-height: 48px;
+    min-width: 120px;
+  }
+}
+
+.product-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.product-card:active {
+  transform: scale(0.98);
+}
+
+.feature {
+  transition: all 0.3s ease;
+}
+
+.feature:active {
+  transform: translateX(8px);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  background-color: #f0f7ff;
+}
+
+* {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+button {
+  transition: all 0.3s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.mobile-only {
+  animation: slideInFromRight 0.5s ease-out;
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 0.75rem 0;
+  }
+}
+
+@media (hover: none) {
+  .mascot-character:hover {
+    transform: scale(1);
+  }
+
+  .product-card:hover {
+    transform: none;
+  }
+}
+
+@media print {
+  #mascot-container,
+  #mobile-menu {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .mascot-character {
+    animation: none !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0066cc;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #004499;
+}
+
+@media (prefers-contrast: more) {
+  body {
+    font-weight: 500;
+  }
+
+  .cta-button {
+    border: 2px solid currentColor;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #ffffff;
+    color: #1a1a1a;
+  }
+}

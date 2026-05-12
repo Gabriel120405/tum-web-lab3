@@ -1,33 +1,278 @@
-# Europlasmet - Enhanced Landing Page with Responsive Design & Mascot
+# Lab 4: Static Site Generator & Git CMS
 
-A modern, fully responsive landing page for **Europlasmet**, a leading plastic and polymer manufacturing company. Now enhanced with a friendly mascot, improved mobile experience, and TailwindCSS styling.
+> **Europlasmet Landing Page with SSG and Git-based CMS**
 
-## 🎯 Lab 3 Improvements
+A modern landing page infrastructure using **11ty (Eleventy)** Static Site Generator and **Decap CMS** for content management.
 
-### Customer Requirements ✅
+## 🎯 Project Overview
 
-**Responsive Design (3 Points)**
-- ✅ All elements scale properly for desktop, tablet, and mobile
-- ✅ Mobile menu with hamburger button
-- ✅ Touch-friendly button sizes (minimum 48px)
-- ✅ Responsive typography that adapts to screen size
-- ✅ Media queries for 3 breakpoints: 480px, 768px, 1200px
+This project modernizes the Europlasmet landing page by:
+- ✅ Migrating to a Static Site Generator (11ty/Eleventy)
+- ✅ Integrating Decap CMS for Git-based content editing
+- ✅ Maintaining the CSS framework from Lab 3 (Tailwind CSS + custom styles)
+- ✅ Making all content editable via CMS interface
+- ✅ Deploying the site live
+- ✅ Maintaining clean git history
 
-**Call to Action Visibility (1 Point)**
-- ✅ "Get Started Today" button always visible and prominent on mobile
-- ✅ Fixed positioning considerations for CTA
-- ✅ Large touch target (48x48px minimum)
-- ✅ Contrasting orange color for visibility
+## 🛠 Technology Stack
 
-**Mobile-Only Elements (1 Point)**
-- ✅ Mobile menu navigation (hamburger menu)
-- ✅ Mobile-only info section ("Quick Response" banner)
-- ✅ Responsive navigation that collapses on mobile
-- ✅ Hidden desktop menu on small screens
+### Static Site Generator
+- **11ty (Eleventy)** - Lightweight, flexible build tool
+  - Supports Markdown and Nunjucks templates
+  - Zero-config default setup
+  - Excellent for content-driven sites
 
-**Mascot Character (5.4 Points Total)**
-- ✅ **Related to Topic (0.4 Points)**: Plastic pellet character - directly represents product
-- ✅ **Friendly/Pleasant (1 Point)**: Cute SVG with big eyes, smile, and warm orange color
+### Content Management
+- **Decap CMS** - Git-based headless CMS
+  - Git gateway backend integration
+  - Web UI for content editing
+  - Supports Markdown and YAML frontmatter
+  - Free and open-source
+
+### Styling
+- **Tailwind CSS** - Utility-first CSS framework (via CDN)
+- **Custom CSS** - Enhanced animations and responsive design
+
+## 📁 Project Structure
+
+```
+tum-web-lab4/
+├── src/
+│   ├── _layouts/
+│   │   └── base.njk           # Main layout template
+│   ├── _data/
+│   │   └── site.json          # Site configuration
+│   ├── admin/
+│   │   ├── config.yml         # Decap CMS configuration
+│   │   └── index.html         # CMS interface
+│   ├── content/
+│   │   ├── index.md           # Home page content
+│   │   └── products/          # Product pages
+│   └── css/
+│       ├── reset.css          # CSS reset
+│       └── style.css          # Custom styles and animations
+├── .eleventy.js               # 11ty configuration
+├── package.json               # Dependencies
+├── .gitignore                 # Git ignore rules
+└── _site/                     # Build output (generated)
+```
+
+## 🚀 Getting Started
+
+### Installation
+
+```bash
+# Navigate to project directory
+cd tum-web-lab4
+
+# Install dependencies
+npm install
+```
+
+### Development
+
+```bash
+# Start development server
+npm start
+# Or: npm run dev
+
+# Serves at http://localhost:8080
+```
+
+### Building for Production
+
+```bash
+npm run build
+```
+
+## 💻 Content Management
+
+### Accessing the CMS
+
+1. **Local Development**:
+   - The CMS is available at `http://localhost:8080/admin/`
+   - For Git gateway to work locally, you need to set up authentication
+
+2. **After Deployment**:
+   - Access CMS at your deployed site URL + `/admin/`
+   - Authenticate via GitHub (or Git provider)
+   - Edit content from the web interface
+
+### Editable Content
+
+Content managed via Decap CMS:
+- Home page title, heading, tagline, CTA
+- Products and product descriptions
+- Site settings (title, description)
+- Pricing information
+- Published status
+
+### Content Files (Markdown + YAML)
+
+All content is stored as Markdown files with YAML frontmatter:
+
+```yaml
+---
+layout: base.njk
+title: Page Title
+heading: Main Heading
+tagline: Page Description
+---
+
+# Markdown Content
+```
+
+## 🔗 Decap CMS Configuration
+
+The `src/admin/config.yml` defines:
+- **Backend**: Git gateway (GitHub/GitLab)
+- **Collections**: Pages, Products, Settings
+- **Fields**: Editable content sections with validation
+
+To enable Git gateway authentication:
+1. Deploy to Netlify or another provider with Git integration
+2. Or configure Git gateway for your Git host
+
+## 🌐 Deployment
+
+### Recommended Platforms (Free Tier Options)
+
+#### **Netlify** (Recommended for Decap CMS)
+```bash
+# Deploy with Netlify CLI
+npm install -g netlify-cli
+netlify deploy --prod
+```
+
+- Includes Git gateway for free
+- Automatic builds on git push
+- Form handling and functions included
+
+#### **GitHub Pages**
+1. Push to GitHub repository
+2. Enable GitHub Pages in repository settings
+3. Select `_site` folder as source
+
+#### **Vercel**
+```bash
+npm install -g vercel
+vercel
+```
+
+## 📝 Git Workflow
+
+The project maintains clean git history:
+
+```bash
+# Stage changes
+git add .
+
+# Commit with descriptive messages
+git commit -m "feat: add product management to CMS"
+
+# Push to remote
+git push origin main
+```
+
+**Commit Types**:
+- `feat:` - New feature
+- `fix:` - Bug fix
+- `docs:` - Documentation
+- `style:` - CSS/styling changes
+- `refactor:` - Code restructuring
+- `chore:` - Build, dependencies
+
+## ⚙️ Configuration
+
+### 11ty Configuration (.eleventy.js)
+- Input directory: `src/`
+- Output directory: `_site/`
+- Supports: HTML, Markdown, Nunjucks
+- CSS pass-through and watch configured
+
+### Site Settings (src/_data/site.json)
+```json
+{
+  "title": "Site Title",
+  "description": "Site Description",
+  "logo": "Europlasmet",
+  "company": "Europlasmet"
+}
+```
+
+Accessible in templates via `{{ site.title }}`
+
+## 🎨 Styling Guide
+
+### Tailwind CSS Classes
+- Use Tailwind utility classes in templates
+- Available via CDN in base layout
+- Responsive prefixes: `md:`, `lg:`, `sm:`
+
+### Custom Animations
+- `slideIn` - Content entrance animation
+- `bounceIn` - Pop-in effect
+- `float` - Gentle floating motion
+- `wobble` - Slight rotation wobble
+
+### Responsive Breakpoints
+- Mobile: < 768px
+- Tablet: 768px - 1024px
+- Desktop: > 1024px
+
+## 🔒 Decap CMS Authentication
+
+### Local Development
+For full functionality, configure local Git:
+```bash
+# Set Git user
+git config user.name "Your Name"
+git config user.email "your.email@example.com"
+```
+
+### Production Deployment
+1. Push repository to GitHub/GitLab/Gitea
+2. Deploy via Netlify (has built-in Git gateway)
+3. Or configure Git gateway in CMS config
+4. Users authenticate via Git provider OAuth
+
+## 📚 Learning Resources
+
+- [11ty Documentation](https://www.11ty.dev/)
+- [Decap CMS Docs](https://decapcms.org/docs/intro/)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [JAMstack.org](https://jamstack.org/)
+
+## 🤝 Features
+
+### ✅ Implemented
+- [x] 11ty SSG setup with markdown support
+- [x] Decap CMS integration with Git backend
+- [x] Responsive Tailwind CSS styling
+- [x] Custom animations and interactions
+- [x] Content management interface
+- [x] Site configuration management
+- [x] Product collection support
+- [x] Mobile-responsive design
+- [x] Git-based workflow
+
+### 🔄 Future Enhancements
+- [ ] Deploy to Netlify or GitHub Pages
+- [ ] Set up GitHub OAuth for CMS
+- [ ] Add image optimization
+- [ ] Implement search functionality
+- [ ] Add blog collection
+- [ ] Email form integration
+
+## 📄 License
+
+MIT License - feel free to use this project as a reference.
+
+## 👤 Credits
+
+**Lab 4 - Web Development**
+- Built with 11ty & Decap CMS
+- Based on Europlasmet landing page from Lab 3
 - ✅ **Appear After Delay (1 Point)**: Shows after 2000ms with smooth slide-in animation
 - ✅ **Multiple Animations (1.4 Points)**:
   - Continuous floating animation

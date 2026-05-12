@@ -1,0 +1,29 @@
+{
+  "name": "europlasmet-ssg-cms",
+  "version": "1.0.0",
+  "description": "Static Site Generator with Git-based CMS for Europlasmet landing page",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve",
+    "watch": "eleventy --watch",
+    "start": "npm run dev"
+  },
+  "keywords": [
+    "11ty",
+    "eleventy",
+    "static-site-generator",
+    "cms",
+    "decap"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-img": "^4.0.0",
+    "lightningcss": "^1.21.0"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3"
+  }
+}

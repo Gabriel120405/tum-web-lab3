@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "title": "Europlasmet - Premium Plastic Solutions",
+    "description": "High-quality polymer products and manufacturing services since 1995"
+  },
+  "hero": {
+    "title": "Premium Plastic Solutions for Every Industry",
+    "subtitle": "High-quality polymer products and manufacturing services since 1995",
+    "ctaText": "Get Started Today",
+    "ctaLink": "#contact"
+  },
+  "products": [
+    {
+      "emoji": "🏭",
+      "title": "Industrial Polymers",
+      "description": "High-performance plastic materials for manufacturing and industrial applications. Durable, reliable, and cost-effective solutions."
+    },
+    {
+      "emoji": "📦",
+      "title": "Packaging Solutions",
+      "description": "Custom plastic packaging designed for your specific needs. Food-safe, sustainable, and tamper-proof options available."
+    },
+    {
+      "emoji": "🔧",
+      "title": "Custom Manufacturing",
+      "description": "Tailored plastic components manufactured to your exact specifications. Fast turnaround and competitive pricing."
+    },
+    {
+      "emoji": "♻️",
+      "title": "Eco-Friendly Options",
+      "description": "Sustainable plastic solutions using recycled materials. Reduce your environmental footprint without compromising quality."
+    }
+  ],
+  "about": {
+    "title": "Why Choose Europlasmet?",
+    "features": [
+      {
+        "title": "30+ Years of Excellence",
+        "description": "Trusted by thousands of businesses across Europe and beyond for high-quality plastic solutions."
+      },
+      {
+        "title": "Advanced Technology",
+        "description": "State-of-the-art manufacturing equipment ensures consistent quality and precision in every product."
+      },
+      {
+        "title": "Quick Turnaround",
+        "description": "Fast production and delivery times without sacrificing quality. We understand your time is valuable."
+      },
+      {
+        "title": "Competitive Pricing",
+        "description": "Excellent value for money with flexible bulk order discounts and long-term partnership benefits."
+      },
+      {
+        "title": "Expert Support",
+        "description": "Dedicated team of engineers and specialists ready to help with technical guidance and custom solutions."
+      },
+      {
+        "title": "Certified Quality",
+        "description": "ISO certified manufacturing processes and rigorous quality control standards for peace of mind."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get in Touch with Us",
+    "address": "str. Industrială 15, Chișinău, MD-2000, Moldova",
+    "phone": "+373 (22) 123-4567",
+    "email": "info@europlasmet.md",
+    "hours": "Monday - Friday: 8:00 AM - 6:00 PM\nSaturday: 9:00 AM - 2:00 PM"
+  },
+  "footer": "© 2026 Europlasmet. All rights reserved. | Premium Plastic Solutions"
+}
